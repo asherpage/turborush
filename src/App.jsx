@@ -51,15 +51,15 @@ function MyComponent() {
 function moveEnemy(car) {
   let ele = document.querySelectorAll(".enemy");
   ele.forEach(function (item) {
-    if (player.start && item.y < 600 && isCollide(car, item)) {
+    if (isCollide(car, item)) {
       endGame();
     }
-    if (item.y > 1500) {
-      item.y = -600;
-      item.style.left = Math.floor(Math.random() * 350) + "px";
-      // Randomly select one of the three images for the enemy
-      item.style.backgroundImage = "url(" + enemyImages[Math.floor(Math.random() * enemyImages.length)] + ")";
-    }
+        if (item.y > 1500) {
+          item.y = -600;
+          item.style.left = Math.floor(Math.random() * 350) + "px";
+          // Randomly select one of the three images for the enemy
+          item.style.backgroundImage = "url(" + enemyImages[Math.floor(Math.random() * enemyImages.length)] + ")";
+        }
     item.y += player.speed;
     item.style.top = item.y + "px";
   });
@@ -164,7 +164,7 @@ function moveEnemy(car) {
       let car = document.createElement("div");
       car.setAttribute("class", "car");
       gameArea.appendChild(car);
-      player.x = car.offsetLeft;
+      player.x = 200;
       player.y = car.offsetTop;
 
       // Generate initial enemy cars
