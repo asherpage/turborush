@@ -1,0 +1,189 @@
+.hide {
+    display: none;
+}
+
+@font-face {
+    font-family: kanit;
+    src: url(./Kanit-Medium.ttf);
+}
+
+@font-face {
+    font-family: arch;
+    src: url(./Archivo-VariableFont_wdth\,wght.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./cuig5g19dxpy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    /* Ensures it's on top of other elements */
+    background-color: rgb(230, 230, 230);
+    /* Adjust transparency as needed */
+    padding: 150px;
+    font-size: 2em;
+    border: none;
+    box-shadow: 7px 7px 4px rgba(15, 15, 15, 0.212);
+    text-align: center;
+    /* Optional: adds a shadow effect */
+    font-family: arch;
+    font-weight: 600;
+}
+
+.play-again {
+    padding: 10px 30px;
+    margin-top: 2rem;
+    background-color: rgb(39, 174, 18);
+    color: black;
+    border: none;
+    border-radius: 10px;
+    font-family: arch;
+    font-weight: 700;
+
+}
+
+.car,
+.enemy {
+    position: absolute;
+    bottom: 100px;
+    margin: auto;
+    background-position: center;
+    width: 50px;
+    height: 100px;
+    background-color: transparent;
+    background-image: url(car.png);
+    background-size: cover;
+}
+
+.car {
+    background-image: url(./cars/./yellowcar.png);
+}
+
+.gameArea {
+    background-color: rgb(19, 19, 19);
+    border-left: 8px solid yellow;
+    border-right: 8px solid yellow;
+    width: 400px;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.line {
+    position: absolute;
+    height: 100px;
+    width: 10px;
+    margin-left: 195px;
+    background-color: rgb(255, 255, 255);
+}
+
+.score {
+    background-color: rgba(238, 26, 26, 0);
+    height: 100px;
+    text-shadow: 2px 2px 1px black;
+    position: absolute;
+    width: fit-content;
+    text-align: left;
+    color: white;
+    font-size: 3em;
+    padding-left: 1rem;
+    font-family: fantasy;
+}
+
+.startScreen {
+    text-align: center;
+    border: 3px solid black;
+    padding: 15px;
+    margin: auto;
+    width: 300px;
+    background-color: rgb(49, 207, 49);
+    border-radius: 10px;
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./96fdcdd74b64b2199cc221c9598f73d3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+
+.title {
+    width: 50rem;
+    height: fit-content;
+    font-size: 10em;
+    margin-bottom: 20px;
+    margin-top: 8rem;
+}
+
+.buttons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    margin: 12px;
+    padding: 25px 70px;
+    font-size: 1.2em;
+    text-decoration: none;
+
+    font-family: kanit;
+    color: #0e0e0e;
+    background-color: rgba(243, 243, 243, 0.831);
+    box-shadow: 0 0 5px rgb(109, 109, 109);
+    /* Replace with your desired button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgb(138, 138, 138);
+    /* Change the hover color if needed */
+}
+
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #c33228;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-family: arch;
+}
+
+.home-button:hover {
+    background-color: #99241c;
+}
