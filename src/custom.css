@@ -1,0 +1,138 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: rgb(213, 213, 213);
+    background-image: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-display img {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#box1 {
+    /* border: 10px solid yellow; */
+    border-radius: 5px;
+    background-color: rgb(24, 24, 24);
+}
+
+#box2 {
+    /* border: 10px solid blue; */
+    border-radius: 5px;
+    background-color: rgb(24, 24, 24);
+}
+
+#box3 {
+    /* border: 10px solid red; */
+    border-radius: 5px;
+    background-color: rgb(24, 24, 24);
+}
+
+#box4 {
+    /* border: 10px solid orange; */
+    border-radius: 5px;
+    background-color: rgb(24, 24, 24);
+}
+
+/* #box4:hover {
+    box-shadow: 5px 5px 2px orange;
+    transition: .3s;
+}
+
+#box3:hover {
+    box-shadow: 5px 5px 2px red;
+    transition: .3s;
+}
+
+#box2:hover {
+    box-shadow: 5px 5px 2px blue;
+    transition: .3s;
+}
+
+#box1:hover {
+    box-shadow: 5px 5px 2px yellow;
+    transition: .3s;
+} */
+
+.img {
+    height: 150px;
+    width: fit-content;
+}
+
+@font-face {
+    font-family: arch;
+    src: url(./Archivo-VariableFont_wdth\,wght.ttf);
+}
+
+.header {
+    position: fixed;
+    width: 40%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: arch;
+    font-size: 2rem;
+}
+
+.home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #c33228;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-family: arch;
+}
+
+.home-button:hover {
+    background-color: #99241c;
+}
+.box.selected {
+    border: 5px solid rgb(16, 214, 59);
+    border-radius: 5px;
+    transition: 0.3s;
+}

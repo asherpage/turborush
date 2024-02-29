@@ -62,13 +62,9 @@ div.banner {
     width: 50px;
     height: 100px;
     background-color: transparent;
-    background-image: url(car.png);
     background-size: cover;
 }
 
-.car {
-    background-image: url(./cars/./yellowcar.png);
-}
 
 .gameArea {
     background-color: rgb(19, 19, 19);

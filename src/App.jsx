@@ -3,7 +3,10 @@ import './styles.css';
 import enemy1 from "./enemy1.png";
 import enemy2 from "./enemy2.png";
 import enemy3 from "./enemy3.png";
-
+import yellow from './cars/yellowcar.png';
+import orange from './cars/orangecar.png';
+import police from './cars/policecar.png';
+import red from './cars/redcar.png';
 function MyComponent() {
   useEffect(() => {
     const score = document.querySelector(".score");
@@ -24,6 +27,12 @@ function MyComponent() {
       enemy1,
       enemy2,
       enemy3
+    ];
+    const carImages = [
+      yellow,
+      police,
+      red,
+      orange,
     ];
 
     function moveLines() {
@@ -68,18 +77,22 @@ function moveEnemy(car) {
     function playGame() {
       let car = document.querySelector(".car");
       let road = gameArea.getBoundingClientRect();
-
+      player.speedIncreasedTo1000 = false;
+      player.speedIncreasedTo2000 = false;
       moveLines();
       moveEnemy(car);
-      if (player.score === 1000 && !player.speedIncreased) {
-        player.speed += 3;
-        player.speedIncreased = true; // Set flag to indicate speed increase
-      }
+      if (player.score === 1000 && !player.speedIncreasedTo1000) {
+    player.speed += 3;
+    player.speedIncreasedTo1000 = true; // Set flag to indicate speed increase at 1000
+} else if (player.score === 2000 && !player.speedIncreasedTo2000) {
+    player.speed += 6;
+    player.speedIncreasedTo2000 = true; // Set flag to indicate speed increase at 2000
+}
 
        if (player.score >= 800 && !player.enemiesTripled || player.score >= 200 && !player.enemiesTripled) {
         // Generate two additional enemies for each initial enemy
-        let initialEnemyCount = 2; // Initial number of enemies
-        let additionalEnemyCount = initialEnemyCount + 2;
+        let initialEnemyCount = 3; // Initial number of enemies
+        let additionalEnemyCount = initialEnemyCount + 3;
         let totalEnemyCount = initialEnemyCount + additionalEnemyCount; // Total number of enemies
         
         // Generate additional enemies
@@ -102,14 +115,14 @@ function moveEnemy(car) {
         if (keys.ArrowUp && player.y > road.top - 542) {
           player.y -= player.speed;
         }
-        if (keys.ArrowDown && player.y < road.bottom - 237) {
+        if (keys.ArrowDown && player.y < road.bottom - 70) {
           player.y += player.speed;
         }
         if (keys.ArrowLeft && player.x > 0) {
-          player.x -= player.speed;
+          player.x -= player.speed/2;
         }
         if (keys.ArrowRight && player.x < road.width - 54) {
-          player.x += player.speed;
+          player.x += player.speed/2;
         }
         car.style.left = player.x + "px";
         car.style.top = player.y + "px";
@@ -163,6 +176,8 @@ function moveEnemy(car) {
       // Create player's car
       let car = document.createElement("div");
       car.setAttribute("class", "car");
+      car.style.backgroundImage = "url("+ carImages[localStorage.getItem("car")?localStorage.getItem("car"):0]+ ")";
+      console.log("url("+ carImages[localStorage.getItem("car")?localStorage.getItem("car"):0]+ ")")
       gameArea.appendChild(car);
       player.x = 200;
       player.y = car.offsetTop;
@@ -191,15 +206,18 @@ function moveEnemy(car) {
       document.removeEventListener("keyup", pressOff);
     };
   }, []);
-
+  function home(){
+    window.location.href ="/home"
+  }
   return (
     <div>
       {/* Use Link component for navigation */}
       {/* <Link to="./homescreen.html" className="home-button">Home</Link> */}
       <div className="score"></div>
+      <button className='home-button' onClick={()=>{home()}}>Home</button>
       <div className="game">
         <div className="banner">
-          <div className="ban"></div>
+          <div className="ban">use arrow keys to move</div>
           <button className="play-again">Play again</button>
         </div>
         <div className="special-item"></div>
