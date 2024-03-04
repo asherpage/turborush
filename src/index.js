@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 const router = createBrowserRouter([
   {
-    path: "/app",
+    path: "/",
     element: <App />,
   },{
     path:"/home",

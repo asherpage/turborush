@@ -59,7 +59,7 @@ function Custom() {
 
   return (
     <div>
-      <a href="/app" className="home-button">
+      <a href="/" className="home-button">
         Start
       </a>
       <div className="container">
