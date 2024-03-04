@@ -75,6 +75,7 @@ function moveEnemy(car) {
 }
 
     function playGame() {
+       
       let car = document.querySelector(".car");
       let road = gameArea.getBoundingClientRect();
       player.speedIncreasedTo1000 = false;
@@ -89,7 +90,7 @@ function moveEnemy(car) {
     player.speedIncreasedTo2000 = true; // Set flag to indicate speed increase at 2000
 }
 
-       if (player.score >= 800 && !player.enemiesTripled || player.score >= 200 && !player.enemiesTripled) {
+       if (player.score >= 1000 && !player.enemiesTripled || player.score >= 200 && !player.enemiesTripled) {
         // Generate two additional enemies for each initial enemy
         let initialEnemyCount = 3; // Initial number of enemies
         let additionalEnemyCount = initialEnemyCount + 3;
@@ -129,8 +130,28 @@ function moveEnemy(car) {
         window.requestAnimationFrame(playGame);
         player.score++;
         score.innerText = "Score: " + player.score;
-      }
+      }if (player.score === 1000) {
+    showLevelUpMessage("Level 2 Speed");
+  } else if (player.score === 2000) {
+    showLevelUpMessage("Level 3 Speed");
+  }
+
     }
+    function showLevelUpMessage(level) {
+  // Create a new div element with the class 'alert'
+  let alertDiv = document.createElement("div");
+  alertDiv.classList.add("alert");
+
+  let levelUpMessage = document.createElement("h1");
+  levelUpMessage.innerText = level;
+  levelUpMessage.classList.add("level-up");
+  alertDiv.classList.add("alert");
+  alertDiv.appendChild(levelUpMessage);
+  gameArea.appendChild(alertDiv);
+  setTimeout(() => {
+    alertDiv.remove();
+  }, 2000);
+}
 
     function pressOn(e) {
       e.preventDefault();
@@ -213,12 +234,15 @@ function moveEnemy(car) {
     <div>
       {/* Use Link component for navigation */}
       {/* <Link to="./homescreen.html" className="home-button">Home</Link> */}
-      <div className="score"></div>
-      <button className='home-button' onClick={()=>{home()}}>Home</button>
+      
+      <button className='home' onClick={()=>{home()}}>Home</button>
       <div className="game">
         <div className="banner">
           <div className="ban">use arrow keys to move</div>
-          <button className="play-again">Play again</button>
+          <div className='butcon'>
+          <button className="play-again">Play</button>
+          <button className="homeski" onClick={()=>{home()}} >Home</button>
+          </div>
         </div>
         <div className="special-item"></div>
         {/* <div className="startScreen">
@@ -226,6 +250,7 @@ function moveEnemy(car) {
           {/* Press here to Start<br />Arrow keys to move<br />Don't hit the other cars!
         </div> */}
         <div className="gameArea"></div>
+        <div className="score"></div>
       </div>
     </div>
   );

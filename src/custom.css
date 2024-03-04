@@ -127,7 +127,25 @@ body {
     transition: background-color 0.3s;
     font-family: arch;
 }
-
+#starter {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #388a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-family: arch;
+}
+.car-title{
+    width: 50rem;
+    text-align: center;
+    color: rgb(24, 24, 24);
+    margin-bottom: 2rem;
+}
 .home-button:hover {
     background-color: #99241c;
 }
@@ -135,4 +153,24 @@ body {
     border: 5px solid rgb(16, 214, 59);
     border-radius: 5px;
     transition: 0.3s;
+}
+@media only screen and (max-width: 500px) {
+    #image1, #image2, #image3, #image4{
+        width: 0;
+        height: 0;
+        display: none;
+    }
+    h2{
+        display: none;
+    }
+    .image-display{
+        display: none;
+    }
+                .boxes {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100vw;
+                }
 }

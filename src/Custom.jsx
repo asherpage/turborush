@@ -28,7 +28,7 @@ function Custom() {
           carTitle.textContent = 'Corvette';
           break;
         case 1:
-          carTitle.textContent = 'Piglet Vehicle';
+          carTitle.textContent = 'Piglet';
           break;
         case 2:
           carTitle.textContent = 'Lambo';
@@ -59,7 +59,7 @@ function Custom() {
 
   return (
     <div>
-      <a href="/" className="home-button">
+      <a href="/"id='starter'>
         Start
       </a>
       <div className="container">

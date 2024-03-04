@@ -20,6 +20,7 @@ body {
     background-image: url(./cuig5g19dxpy.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 div.banner {
@@ -42,14 +43,28 @@ div.banner {
 }
 
 .play-again {
-    padding: 10px 30px;
+    width: 6rem;
+    height: 3rem;
     margin-top: 2rem;
     background-color: rgb(39, 174, 18);
-    color: black;
+    color: rgb(229, 229, 229);
     border: none;
     border-radius: 10px;
     font-family: arch;
     font-weight: 700;
+
+}
+.homeski {
+    width: 6rem;
+    height: 3rem;
+    margin-top: .5rem;
+    background-color: rgb(146, 35, 29);
+    color: rgb(229, 229, 229);
+    border: none;
+    border-radius: 10px;
+    font-family: arch;
+    font-weight: 700;
+    display: none;
 
 }
 
@@ -76,6 +91,7 @@ div.banner {
     position: absolute;
     margin: auto;
     left: 50%;
+    z-index: 2;
     transform: translateX(-50%);
 }
 
@@ -98,6 +114,7 @@ div.banner {
     font-size: 3em;
     padding-left: 1rem;
     font-family: fantasy;
+    z-index: 100;
 }
 
 .startScreen {
@@ -130,56 +147,111 @@ div.banner {
     margin-bottom: 5rem;
 }
 
-.title {
-    width: 50rem;
-    height: fit-content;
-    font-size: 10em;
-    margin-bottom: 20px;
-    margin-top: 8rem;
-}
+ .title {
+     width: 40rem;
+     height: fit-content;
+     font-size: 10em;
+     margin-bottom: 20px;
+     margin-top: 8rem;
+ }
 
-.buttons {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-}
+ .buttons {
+     margin-top: 3rem;
+     display: flex;
+     flex-direction: column;
+ }
 
-.button {
-    margin: 12px;
-    padding: 25px 70px;
-    font-size: 1.2em;
-    text-decoration: none;
+ .button {
+     margin: 12px;
+     padding: 25px 70px;
+     font-size: 1.2em;
+     text-decoration: none;
 
-    font-family: kanit;
-    color: #0e0e0e;
-    background-color: rgba(243, 243, 243, 0.831);
-    box-shadow: 0 0 5px rgb(109, 109, 109);
-    /* Replace with your desired button color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
+     font-family: kanit;
+     color: #0e0e0e;
+     background-color: rgba(243, 243, 243, 0.831);
+     box-shadow: 0 0 5px rgb(109, 109, 109);
+     /* Replace with your desired button color */
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
 
-.button:hover {
-    background-color: rgb(138, 138, 138);
-    /* Change the hover color if needed */
-}
+ .button:hover {
+     background-color: rgb(138, 138, 138);
+     /* Change the hover color if needed */
+ }
 
-.home-button {
+.home {
     position: fixed;
     bottom: 20px;
     right: 20px;
     padding: 10px 20px;
     background-color: #c33228;
     color: #fff;
+    border: none;
     text-decoration: none;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.625);
     transition: background-color 0.3s;
     font-family: arch;
+}
+.level-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 4px 4px 1px rgb(40, 40, 40);
+    font-family: fantasy;
+    font-size: 3rem;
+    color: rgb(224, 224, 224);
+    z-index: 50;
+}
+.alert{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-button:hover {
     background-color: #99241c;
+}
+@media only screen and (max-width: 650px) {
+    .homeski {
+            display: block;
+    
+        }
+        .home{
+            display: none;
+        }
+        div.ban{
+            width: 80vw;
+
+            padding-bottom: 0;
+        }
+        div.banner{
+            width: 80vw;
+        }
+        .butcon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .title{
+            width: 25rem;
+        }
+}
+@media only screen and (max-width: 400px) {
+    .title {
+            width: 17rem;
+        }
+    body{
+        overflow: scroll;
+    }
+    .gameArea{
+        width: 350px;
+    }
+
 }
